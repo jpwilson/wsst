@@ -1,10 +1,10 @@
 interface Props {
-  buttonVariant: ReactNode;
-  children: ReactNode;
+  buttonVariant?: "primary" | "secondary" | "danger" | "warning";
+  children: string;
   onClick: () => void;
 }
 
-const Button = ({ buttonVariant, children, onClick }: Props) => {
+const Button = ({ buttonVariant = "primary", children, onClick }: Props) => {
   return (
     <button className={"btn btn-" + buttonVariant} onClick={onClick}>
       {children}
